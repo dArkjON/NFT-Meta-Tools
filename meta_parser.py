@@ -3,15 +3,12 @@ from web3 import Web3
 import json
 import time
 
-
-
 def printer():
    print ('=================================================')
    print ('             NFT Meta Parser Web3                ')
    print ('               create by dArkjON                 ')
    print ('=================================================')
    print ('               ++++++++++++++++++++              ')
-   
 
 def connectETH():
    global eth
@@ -55,7 +52,6 @@ def connectMATIC():
    else:
      print ('Offline')
 
-
 menu_options = {
     1: 'ETH Server',
     2: 'BNB Server',
@@ -77,9 +73,6 @@ def contract():
     print("Contract Address is: " + contractAddress)
     contractAddress = web3.toChecksumAddress(contractAddress)
     getABI(contractAddress)
-
-    
-    
   
 def getABI(contract):
     if (server == 'ETH'):
@@ -148,7 +141,6 @@ def URIparse(name, url, nummer, contract):
           splitter = (Segments[2].split('.')) 
           nid = (int(splitter[0]))
           fex = splitter[1]
-       
       
       for x in range(nummer): 
           if (fex == ""):
@@ -160,6 +152,7 @@ def URIparse(name, url, nummer, contract):
           parsed = json.loads(f.text)
           print (parsed)
           f = open(name + '_' + str(contract) + ".csv", "a")
+          #openwork: filename + nummer
           f.write(str(parsed))
           f.write('\n')
           f.close()
