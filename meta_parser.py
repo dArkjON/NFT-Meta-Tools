@@ -71,6 +71,9 @@ menu2_options = {
 
 def contract():
     contractAddress = input("Enter Contract Address : ")
+    
+    #openwork : add check 'try'
+    
     print("Contract Address is: " + contractAddress)
     contractAddress = web3.toChecksumAddress(contractAddress)
     getABI(contractAddress)
@@ -121,6 +124,8 @@ def URIparse(name, url, nummer, contract):
       print ('IPFS Parser for ' + name + ' ' + str(nummer))
       splitter = (url.split('/')) 
       nid = (int(splitter[3]))
+      
+      #openwork : add file check like web parse
       
       for x in range(nummer): 
           url = 'https://cloudflare-ipfs.com/ipfs/'+str(splitter[2])+'/'+str(nid)
